@@ -124,10 +124,7 @@ button[kind="header"] {
 
 @media (max-width: 768px) {
 
-    div[data-testid="column"] {
-        width: 100% !important;
-        flex: 1 1 100% !important;
-    }
+
 
     .stMarkdown {
         color: #222222 !important;
