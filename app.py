@@ -174,8 +174,11 @@ st.link_button("📍Ubicacion","https://www.google.com/maps/place/Belgrano+855,+
 
 st.markdown("📍 Dirección :Belgrano 855     🏢 Localidad:  Bell Ville-Cordoba       ✉️ Mail: agrolineferreteria@gmail.com ")
 
-
 archivo = "catalogo.xlsx"
+
+@st.cache_data
+def cargar_hoja(nombre_hoja):
+    return pd.read_excel(archivo, sheet_name=nombre_hoja)
 
 excel = pd.ExcelFile(archivo)
 st.markdown("""
@@ -394,7 +397,7 @@ if hojas_marca:
             
     ]
         hoja = st.selectbox("Seleccioná modelo", hojas_marca)
-        df = pd.read_excel(archivo, sheet_name=hoja)
+        df = cargar_hoja(hoja)
 
     else:
         mapa_hojas = {
