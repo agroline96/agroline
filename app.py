@@ -36,9 +36,7 @@ st.markdown("""
 
 fondos = [
     "imagenes/fondo1.png",
-    "imagenes/fondo2.png",
-    "imagenes/fondo3.png",
-    "imagenes/fondo4.png",
+    
 ]
 
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
