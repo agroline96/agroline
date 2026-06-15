@@ -196,29 +196,7 @@ st.markdown(
     "<h2 style='text-align:center; color:#25D366; margin-bottom:25px;'>🏆 Algunas de nuestras marcas</h2>",
     unsafe_allow_html=True
 )
-logos = [
-    "skf.png",
-    "stihl.png",
-    "ew.png",
-    "ibaf.png",
-    "barrax.png",
-    "peer.png",
-    "duter.png",
-    "ingersoll.png"
-]
 
-cols = st.columns([1, 1, 1], gap="small")
-
-for i, logo in enumerate(logos):
-    with cols[i % 3]:
-        if logo == "duter.png":
-            st.image(f"imagenes/logos/{logo}", width=90)
-        else:
-            st.image(f"imagenes/logos/{logo}", width=105)
-st.markdown(
-    "<h3 style='color:#25D366;'>📂 Categorías</h3>",
-    unsafe_allow_html=True
-)
 
 st.markdown("## 📁 Categorías")
 
