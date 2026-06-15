@@ -197,17 +197,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-logos = [
-    "jhond.png", 
+logos = [ 
     "skf.png",
     "stihl.png",
-    "fram.png",
     "ew.png",
-    "nh.png",
-    "case.png",
-    "myf.png",
-    "vassalli.png",
-    "donroque.png",
     "favero.png",
     "ibaf.png",
     "barrax.png",
