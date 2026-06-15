@@ -216,19 +216,14 @@ logos = [
     "ingersoll.png"
 ]
 
-html_logos = "<div style='display:flex; flex-wrap:wrap; gap:25px; justify-content:center; align-items:center;'>"
+cols = st.columns(4)
 
-for logo in logos:
-    ancho = 90 if logo == "duter.png" else 105
-    html_logos += f"""
-    <div style='width:120px; text-align:center; margin-bottom:20px;'>
-        <img src='imagenes/logos/{logo}' style='width:{ancho}px; max-width:100%;'>
-    </div>
-    """
-
-html_logos += "</div>"
-
-st.markdown(html_logos, unsafe_allow_html=True)
+for i, logo in enumerate(logos):
+    with cols[i % 4]:
+        if logo == "duter.png":
+            st.image(f"imagenes/logos/{logo}", width=90)
+        else:
+            st.image(f"imagenes/logos/{logo}", width=105)
 
 
 st.markdown(
