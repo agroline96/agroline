@@ -207,7 +207,7 @@ logos = [
     "ingersoll.png"
 ]
 
-cols = st.columns(3)
+cols = st.columns([1, 1, 1], gap="small")
 
 for i, logo in enumerate(logos):
     with cols[i % 3]:
