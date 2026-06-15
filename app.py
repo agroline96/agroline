@@ -196,6 +196,66 @@ st.markdown(
     "<h2 style='text-align:center; color:#25D366; margin-bottom:25px;'>🏆 Algunas de nuestras marcas</h2>",
     unsafe_allow_html=True
 )
+logos = [
+     
+    "skf.png",
+    "stihl.png",
+    "ew.png",
+    "ibaf.png",
+    "barrax.png",
+    "peer.png",
+    "duter.png",
+    "ingersoll.png"
+]
+
+logos_html = ""
+
+for logo in logos:
+    logos_html += f"""
+    <div class="logo-card">
+        <img src="imagenes/logos/{logo}">
+    </div>
+    """
+
+st.markdown(f"""
+<style>
+.logo-grid {{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 25px;
+}}
+
+.logo-card img {{
+    width: 80px;
+    max-width: 100%;
+    height: auto;
+}}
+
+@media (max-width: 768px) {{
+    .logo-grid {{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }}
+
+    .logo-card img {{
+        width: 70px;
+    }}
+}}
+</style>
+
+<div class="logo-grid">
+    {logos_html}
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown(
+
+    "<h3 style='color:#25D366;'>📂 Categorías</h3>",
+    unsafe_allow_html=True
+)
 
 
 st.markdown("## 📁 Categorías")
