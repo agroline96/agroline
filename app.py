@@ -196,17 +196,7 @@ st.markdown(
     "<h2 style='text-align:center; color:#25D366; margin-bottom:25px;'>🏆 Algunas de nuestras marcas</h2>",
     unsafe_allow_html=True
 )
-st.markdown("""
-<style>
-@media (max-width: 768px) {
-    div[data-testid="column"] {
-        min-width: 30% !important;
-        flex: 1 1 30% !important;
-    }
-}
-</style>
-""", unsafe_allow_html=True)
-logos = [ 
+logos = [
     "skf.png",
     "stihl.png",
     "ew.png",
@@ -217,52 +207,15 @@ logos = [
     "ingersoll.png"
 ]
 
-logos_html = ""
+cols = st.columns(3)
 
-for logo in logos:
-    logos_html += f"""
-    <div class="logo-card">
-        <img src="imagenes/logos/{logo}">
-    </div>
-    """
-
-st.markdown(f"""
-<style>
-.logo-grid {{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 25px;
-}}
-
-.logo-card img {{
-    width: 80px;
-    max-width: 100%;
-    height: auto;
-}}
-
-@media (max-width: 768px) {{
-    .logo-grid {{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }}
-
-    .logo-card img {{
-        width: 70px;
-    }}
-}}
-</style>
-
-<div class="logo-grid">
-    {logos_html}
-</div>
-""", unsafe_allow_html=True
-
-
-st.markdown(
-
+for i, logo in enumerate(logos):
+    with cols[i % 3]:
+        if logo == "duter.png":
+            st.image(f"imagenes/logos/{logo}", width=90)
+        else:
+            st.image(f"imagenes/logos/{logo}", width=105)
+st.mardown(
     "<h3 style='color:#25D366;'>📂 Categorías</h3>",
     unsafe_allow_html=True
 )
