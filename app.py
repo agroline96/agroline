@@ -509,7 +509,9 @@ col5.markdown(
 )
 
 st.divider()
-
+st.markdown("""
+<div style="overflow-x:auto; width:100%;">
+""", unsafe_allow_html=True)
 for i, fila in df.iterrows():
     col0, col1, col2, col3, col4, col5 = st.columns([1.5, 2, 5, 4, 2, 2.4])
 
