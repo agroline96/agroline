@@ -216,10 +216,10 @@ logos = [
     "ingersoll.png"
 ]
 
-cols = st.columns(4)
+cols = st.columns(2)
 
 for i, logo in enumerate(logos):
-    with cols[i % 4]:
+    with cols[i % 2]:
         if logo == "duter.png":
             st.image(f"imagenes/logos/{logo}", width=90)
         else:
