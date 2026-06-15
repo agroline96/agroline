@@ -217,14 +217,48 @@ logos = [
     "ingersoll.png"
 ]
 
-cols = st.columns([1,1,1], gap="small")
+logos_html = ""
 
-for i, logo in enumerate(logos):
-    with cols[i % 3]:
-        if logo == "duter.png":
-            st.image(f"imagenes/logos/{logo}", width=90)
-        else:
-            st.image(f"imagenes/logos/{logo}", width=105)
+for logo in logos:
+    logos_html += f"""
+    <div class="logo-card">
+        <img src="imagenes/logos/{logo}">
+    </div>
+    """
+
+st.markdown(f"""
+<style>
+.logo-grid {{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 25px;
+}}
+
+.logo-card img {{
+    width: 80px;
+    max-width: 100%;
+    height: auto;
+}}
+
+@media (max-width: 768px) {{
+    .logo-grid {{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }}
+
+    .logo-card img {{
+        width: 70px;
+    }}
+}}
+</style>
+
+<div class="logo-grid">
+    {logos_html}
+</div>
+""", unsafe_allow_html=True
 
 
 st.markdown(
