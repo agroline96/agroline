@@ -1,4 +1,4 @@
-from streamlit_autorefresh import st_autorefresh
+
 import base64
 import time
 import streamlit as st
@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit.components.v1 as components
 from urllib.parse import quote
 
-st_autorefresh(interval=5000, key="banner")
 st.set_page_config(page_title="Agroline", layout="wide")
 GA_ID = "G-34PEPJNC3B"
 
