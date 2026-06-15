@@ -196,7 +196,16 @@ st.markdown(
     "<h2 style='text-align:center; color:#25D366; margin-bottom:25px;'>🏆 Algunas de nuestras marcas</h2>",
     unsafe_allow_html=True
 )
-
+st.markdown("""
+<style>
+@media (max-width: 768px) {
+    div[data-testid="column"] {
+        min-width: 30% !important;
+        flex: 1 1 30% !important;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
 logos = [ 
     "skf.png",
     "stihl.png",
@@ -208,10 +217,10 @@ logos = [
     "ingersoll.png"
 ]
 
-cols = st.columns(4)
+cols = st.columns([1,1,1], gap="small")
 
 for i, logo in enumerate(logos):
-    with cols[i % 4]:
+    with cols[i % 3]:
         if logo == "duter.png":
             st.image(f"imagenes/logos/{logo}", width=90)
         else:
