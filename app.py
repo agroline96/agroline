@@ -215,7 +215,7 @@ for i, logo in enumerate(logos):
             st.image(f"imagenes/logos/{logo}", width=90)
         else:
             st.image(f"imagenes/logos/{logo}", width=105)
-st.mardown(
+st.markdown(
     "<h3 style='color:#25D366;'>📂 Categorías</h3>",
     unsafe_allow_html=True
 )
