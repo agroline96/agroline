@@ -201,7 +201,6 @@ logos = [
     "skf.png",
     "stihl.png",
     "ew.png",
-    "favero.png",
     "ibaf.png",
     "barrax.png",
     "peer.png",
