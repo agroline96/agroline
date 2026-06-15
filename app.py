@@ -145,7 +145,7 @@ st.link_button("📍Ubicacion","https://www.google.com/maps/place/Belgrano+855,+
 st.markdown("📍 Dirección :Belgrano 855     🏢 Localidad:  Bell Ville-Cordoba       ✉️ Mail: agrolineferreteria@gmail.com ")
 
 
-archivo = r"C:\Users\USUARIO\Agroline\datos\catalogo.xlsx"
+archivo = "catalogo.xlsx"
 
 excel = pd.ExcelFile(archivo)
 st.markdown("""
