@@ -108,7 +108,43 @@ section[data-testid="stSidebar"] {
 button[kind="header"] {
     display: none;
 }
+@media (max-width: 768px) {
+
+    .encabezado-productos {
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .encabezado-productos h3 {
+        font-size: 18px !important;
+        margin: 0 !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    div[data-testid="column"] {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    .stMarkdown {
+        color: #222222 !important;
+    }
+
+    p, span, div {
+        font-size: 14px !important;
+    }
+
+    button {
+        font-size: 14px !important;
+    }
+
+}
+
 </style>
+
 """, unsafe_allow_html=True)
 col_logo, col_wp = st.columns([3, 1])
 
