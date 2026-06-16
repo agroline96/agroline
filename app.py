@@ -191,7 +191,7 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 st.markdown("## 🏷️ Algunas de nuestras marcas")
 
 st.image(
-    "imagenes/logos/bannerlogos.png",
+    "imagenes/logos/ULTIMOBANNER.png",
     use_container_width=True
 )
 st.markdown("## 📁 Categorías")
