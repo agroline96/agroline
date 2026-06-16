@@ -205,10 +205,10 @@ logos = [
     "ingersoll.png",
 ]
 
-cols = st.columns(4)
+cols = st.columns(1)
 
 for i, logo in enumerate(logos):
-    with cols[i % 4]:
+    with cols[i % 1]:
         st.image(f"./imagenes/logos/{logo}", width=80)
 
 st.markdown("## 📁 Categorías")
