@@ -156,6 +156,12 @@ Para cosechadoras, sembradoras e industrias
 </p>
 
 """, unsafe_allow_html=True)
+   with col_wp:
+    st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
+    st.image(
+        "imagenes/logos/ULTIMOBANNER.png",
+        width=300
+    )
 st.markdown("""
 <p style='font-size:18px;
           color:#F58220;
