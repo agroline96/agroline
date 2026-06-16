@@ -1,4 +1,3 @@
-
 import base64
 import time
 import streamlit as st
@@ -223,7 +222,10 @@ st.markdown("""
 html_logos = ""
 
 for logo in logos:
-    html_logos += f'<img src="imagenes/logos/{logo}">'
+    with open(f"imagenes/logos/{logo}", "rb") as img_file:
+        img_base64 = base64.b64encode(img_file.read()).decode()
+
+    html_logos += f'<img src="data:image/png;base64,{img_base64}">'
 
 st.markdown(
     f'<div class="logo-fila">{html_logos}</div>',
