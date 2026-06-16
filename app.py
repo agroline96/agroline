@@ -250,8 +250,11 @@ categorias = [
 ]
 categoria = st.selectbox(
     "Seleccioná una categoría",
-    categorias
+    ["Seleccioná una categoría"] + categorias
 )
+
+if categoria == "Seleccioná una categoría":
+    st.stop()
 
 
 
