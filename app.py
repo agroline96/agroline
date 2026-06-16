@@ -205,11 +205,30 @@ logos = [
     "ingersoll.png",
 ]
 
-cols = st.columns(1)
+st.markdown("""
+<style>
+.logo-fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
 
-for i, logo in enumerate(logos):
-    with cols[i % 1]:
-        st.image(f"./imagenes/logos/{logo}", width=80)
+.logo-fila img {
+    width: 80px;
+    height: auto;
+}
+</style>
+""", unsafe_allow_html=True)
+
+html_logos = ""
+
+for logo in logos:
+    html_logos += f'<img src="imagenes/logos/{logo}">'
+
+st.markdown(
+    f'<div class="logo-fila">{html_logos}</div>',
+    unsafe_allow_html=True
+)
 
 st.markdown("## 📁 Categorías")
 
