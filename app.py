@@ -156,7 +156,7 @@ Para cosechadoras, sembradoras e industrias
 </p>
 
 """, unsafe_allow_html=True)
-   with col_wp:
+with col_wp:
     st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
     st.image(
         "imagenes/logos/ULTIMOBANNER.png",
