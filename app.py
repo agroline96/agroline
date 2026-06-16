@@ -261,7 +261,6 @@ st.markdown(
 st.markdown("## 📁 Categorías")
 
 categorias = [
-    "LISTA COMPLETA",
     "Correas para cosechadoras",
     "Correas A-B-C y Kevlar",
     "Rodamientos y retenes",
@@ -277,6 +276,7 @@ categorias = [
     "Tanques",
     "Gato para lanza",
     "Calzado de trabajo",
+    "LISTA COMPLETA",
 ]
 categoria = st.selectbox(
     "Seleccioná una categoría",
