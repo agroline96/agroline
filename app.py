@@ -188,7 +188,7 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 </style>
 """, unsafe_allow_html=True)
 
-    st.image(
+st.image(
         "imagenes/logos/ULTIMOBANNER.png",
         width=220
     )
