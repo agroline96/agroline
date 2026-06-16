@@ -192,35 +192,6 @@ st.divider()
 
 st.divider()
 
-st.markdown(
-    "<h2 style='text-align:center; color:#25D366; margin-bottom:25px;'>🏆 Algunas de nuestras marcas</h2>",
-    unsafe_allow_html=True
-)
-logos = [
-     
-    "skf.png",
-    "stihl.png",
-    "ew.png",
-    "ibaf.png",
-    "barrax.png",
-    "peer.png",
-    "duter.png",
-    "ingersoll.png"
-]
-
-st.markdown("## 🏆 Algunas de nuestras marcas")
-
-logos = [
-    "skf.png",
-    "stihl.png",
-    "ew.png",
-    "ibaf.png",
-    "barrax.png",
-    "peer.png",
-    "duter.png",
-    "ingersoll.png",
-]
-
 st.markdown("## 🏆 Algunas de nuestras marcas")
 
 logos = [
@@ -238,7 +209,7 @@ cols = st.columns(4)
 
 for i, logo in enumerate(logos):
     with cols[i % 4]:
-        st.image(f"imagenes/logos/{logo}", width=80)
+        st.image(f"./imagenes/logos/{logo}", width=80)
 
 st.markdown("## 📁 Categorías")
 
