@@ -177,7 +177,7 @@ with col_wp:
     st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
     st.image(
         "imagenes/logos/ULTIMOBANNER.png",
-        width=300
+        width=260
     )
 
 archivo = "catalogo.xlsx"
