@@ -187,47 +187,13 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 }
 </style>
 """, unsafe_allow_html=True)
-st.markdown("## 🏆 Algunas de nuestras marcas")
 
-logos = [
-    "skf.png",
-    "stihl.png",
-    "ew.png",
-    "ibaf.png",
-    "barrax.png",
-    "peer.png",
-    "duter.png",
-    "ingersoll.png",
-]
+st.markdown("## 🏷️ Algunas de nuestras marcas")
 
-st.markdown("""
-<style>
-.logo-fila {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo-fila img {
-    width: 80px;
-    height: auto;
-}
-</style>
-""", unsafe_allow_html=True)
-
-html_logos = ""
-
-for logo in logos:
-    with open(f"imagenes/logos/{logo}", "rb") as img_file:
-        img_base64 = base64.b64encode(img_file.read()).decode()
-
-    html_logos += f'<img src="data:image/png;base64,{img_base64}">'
-
-st.markdown(
-    f'<div class="logo-fila">{html_logos}</div>',
-    unsafe_allow_html=True
+st.image(
+    "imagenes/logos/bannerlogos.png",
+    use_container_width=True
 )
-
 st.markdown("## 📁 Categorías")
 
 categorias = [
