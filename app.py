@@ -208,6 +208,19 @@ logos = [
     "ingersoll.png"
 ]
 
+st.markdown("## 🏆 Algunas de nuestras marcas")
+
+logos = [
+    "skf.png",
+    "stihl.png",
+    "ew.png",
+    "ibaf.png",
+    "barrax.png",
+    "peer.png",
+    "duter.png",
+    "ingersoll.png",
+]
+
 logos_html = ""
 
 for logo in logos:
@@ -221,7 +234,7 @@ st.markdown(f"""
 <style>
 .logo-grid {{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
     align-items: center;
     justify-items: center;
@@ -250,13 +263,6 @@ st.markdown(f"""
     {logos_html}
 </div>
 """, unsafe_allow_html=True)
-
-st.markdown(
-
-    "<h3 style='color:#25D366;'>📂 Categorías</h3>",
-    unsafe_allow_html=True
-)
-
 
 st.markdown("## 📁 Categorías")
 
