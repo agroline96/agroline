@@ -188,22 +188,6 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 </style>
 """, unsafe_allow_html=True)
 
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.markdown("""
-    <h2 style='color:#1f4e79;'>Más de 20 años de experiencia</h2>
-    <p>
-    Especialistas en repuestos agrícolas, correas, rodamientos,
-    cadenas, cuchillas y accesorios.
-    </p>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.image(
-        "imagenes/logos/ULTIMOBANNER.png",
-        width=300
-    )
 st.markdown("## 📁 Categorías")
 
 categorias = [
