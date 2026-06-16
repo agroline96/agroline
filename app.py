@@ -221,48 +221,24 @@ logos = [
     "ingersoll.png",
 ]
 
-logos_html = ""
+st.markdown("## 🏆 Algunas de nuestras marcas")
 
-for logo in logos:
-    logos_html += f"""
-    <div class="logo-card">
-        <img src="imagenes/logos/{logo}">
-    </div>
-    """
+logos = [
+    "skf.png",
+    "stihl.png",
+    "ew.png",
+    "ibaf.png",
+    "barrax.png",
+    "peer.png",
+    "duter.png",
+    "ingersoll.png",
+]
 
-st.markdown(f"""
-<style>
-.logo-grid {{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    align-items: center;
-    justify-items: center;
-    margin-bottom: 25px;
-}}
+cols = st.columns(4)
 
-.logo-card img {{
-    width: 80px;
-    max-width: 100%;
-    height: auto;
-}}
-
-@media (max-width: 768px) {{
-    .logo-grid {{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }}
-
-    .logo-card img {{
-        width: 70px;
-    }}
-}}
-</style>
-
-<div class="logo-grid">
-    {logos_html}
-</div>
-""", unsafe_allow_html=True)
+for i, logo in enumerate(logos):
+    with cols[i % 4]:
+        st.image(f"imagenes/logos/{logo}", width=80)
 
 st.markdown("## 📁 Categorías")
 
