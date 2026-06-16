@@ -143,41 +143,42 @@ col_logo, col_wp = st.columns([3, 1])
 
 with col_logo:
     st.markdown("<div style='margin-top:20px'></div>", unsafe_allow_html=True)
+
     st.markdown("""
-<h3 style='color:#2D5D36;'>
-Más de 20 años de experiencia en repuestos agricolas
-</h3>
+    <h3 style='color:#2D5D36;'>
+    Más de 20 años de experiencia en repuestos agrícolas
+    </h3>
 
-<p style='font-size:16px; color:#666; margin-bottom:0px;'>
-Correas • Cuchillas • Cadenas • Rodamientos • Cardanes
-</p>
-<p style='font-size:16px; color:#666;'>
-Para cosechadoras, sembradoras e industrias
-</p>
+    <p style='font-size:16px; color:#666; margin-bottom:0px;'>
+    Correas • Cuchillas • Cadenas • Rodamientos • Cardanes
+    </p>
 
-""", unsafe_allow_html=True)
+    <p style='font-size:16px; color:#666;'>
+    Para cosechadoras, sembradoras e industrias
+    </p>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <p style='font-size:18px;
+              color:#F58220;
+              font-weight:bold;
+              margin-top:15px;'>
+    🌿 REPRESENTANTE OFICIAL STIHL
+    </p>
+    """, unsafe_allow_html=True)
+
+    st.link_button("🟢 WhatsApp", "https://wa.me/5493537585428")
+    st.link_button("📸 Instagram", "https://www.instagram.com/agroline.ferreteria")
+    st.link_button("📍 Ubicación", "https://www.google.com/maps/place/Belgrano+855,+Bell+Ville,+Córdoba")
+
+    st.markdown("📍 Dirección :Belgrano 855    🏙️ Localidad: Bell Ville-Cordoba    ✉️ Mail: agrolineferreteria@gmail.com ")
+
 with col_wp:
     st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
     st.image(
         "imagenes/logos/ULTIMOBANNER.png",
         width=300
     )
-st.markdown("""
-<p style='font-size:18px;
-          color:#F58220;
-          font-weight:bold;
-          margin-top:15px;'>
-🌿 REPRESENTANTE OFICIAL STIHL
-</p>
-""", unsafe_allow_html=True)
-
-
-
-st.link_button("🟢 WhatsApp", "https://wa.me/5493537585428")
-st.link_button("📸 Instagram", "https://www.instagram.com/agroline.ferreteria")
-st.link_button("📍Ubicacion","https://www.google.com/maps/place/Belgrano+855,+X2550+Bell+Ville,+C%C3%B3rdoba/@-32.6413207,-62.6958088,17z/data=!4m15!1m8!3m7!1s0x95cbfbacf6561f81:0x7ccbbc8b53ecdfc2!2sBelgrano+855,+X2550+Bell+Ville,+C%C3%B3rdoba!3b1!8m2!3d-32.6413252!4d-62.6932339!16s%2Fg%2F11thrb95qf!3m5!1s0x95cbfbacf6561f81:0x7ccbbc8b53ecdfc2!8m2!3d-32.6413252!4d-62.6932339!16s%2Fg%2F11thrb95qf?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D")
-
-st.markdown("📍 Dirección :Belgrano 855     🏢 Localidad:  Bell Ville-Cordoba       ✉️ Mail: agrolineferreteria@gmail.com ")
 
 archivo = "catalogo.xlsx"
 
