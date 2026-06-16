@@ -187,10 +187,6 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 }
 </style>
 """, unsafe_allow_html=True)
-st.divider()
-
-st.divider()
-
 st.markdown("## 🏆 Algunas de nuestras marcas")
 
 logos = [
