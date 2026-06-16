@@ -187,7 +187,7 @@ div[data-testid="stVerticalBlock"]:has(h3) {
 }
 </style>
 """, unsafe_allow_html=True)
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns([2, 1])
 
 with col1:
     st.markdown("""
@@ -201,7 +201,8 @@ with col1:
 with col2:
     st.image(
         "imagenes/logos/ULTIMOBANNER.png",
-        width=350
+        width=220
+    )
     )
 st.markdown("## 📁 Categorías")
 
