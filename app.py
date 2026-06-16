@@ -203,7 +203,6 @@ with col2:
         "imagenes/logos/ULTIMOBANNER.png",
         width=220
     )
-    )
 st.markdown("## 📁 Categorías")
 
 categorias = [
