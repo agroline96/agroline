@@ -51,22 +51,32 @@ st.markdown(
         background-image:url('data:image/jpg;base64,{fondo_base64}');
         background-size:cover;
         background-position:center;
-        border-radius:10px;
+        border-radius:20px;
         position:relative;
         overflow:hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     ">
-        <img src="data:image/png;base64,{logo_base64}" style="
-            position:absolute;
-            left:-20px;
-            bottom:-60px;
-            width:250px;
-        ">
-    </div>
+ <img src="data:image/png;base64,{logo_base64}" style="
+position:absolute;
+top:20px;
+left:20px;
+width:300px;
+z-index:9999;
+background:white;
+padding:10px;
+border-radius:10px;
+">
+</div>
+
+
     """,
     unsafe_allow_html=True
 )
 
-
+st.image(
+    "imagenes/agroline_logo_limpio.png",
+    width=250
+)  
 st.markdown("""
 <style>
 .stApp {
@@ -142,45 +152,55 @@ button[kind="header"] {
 col_logo, col_wp = st.columns([3, 1])
 
 with col_logo:
-    st.markdown("<div style='margin-top:20px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top:5px'></div>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    col_btn1, col_btn2, col_btn3 = st.columns(3)
+
+    with col_btn1:
+        st.link_button(
+            "🟢 WhatsApp",
+            "https://wa.me/5493537585428",
+            use_container_width=True
+        )
+
+    with col_btn2:
+        st.link_button(
+            "📷 Instagram",
+            "https://www.instagram.com/agroline.ferreteria",
+            use_container_width=True
+        )
+
+    with col_btn3:
+        st.link_button(
+            "📍 Ubicación",
+            "https://www.google.com/maps/place/Belgrano+855,+Bell+Ville,+Córdoba",
+            use_container_width=True
+        )
 
     st.markdown("""
-    <h3 style='color:#2D5D36;'>
-    Más de 20 años de experiencia en repuestos agrícolas
-    </h3>
-
-    <p style='font-size:16px; color:#666; margin-bottom:0px;'>
-    Correas • Cuchillas • Cadenas • Rodamientos • Cardanes
-    </p>
-
-    <p style='font-size:16px; color:#666;'>
-    Para cosechadoras, sembradoras e industrias
-    </p>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <p style='font-size:18px;
-              color:#F58220;
-              font-weight:bold;
-              margin-top:15px;'>
+    <div style='color:#e67e22;font-size:28px;font-weight:bold;'>
     🌿 REPRESENTANTE OFICIAL STIHL
-    </p>
+    </div>
     """, unsafe_allow_html=True)
 
-    st.link_button("🟢 WhatsApp", "https://wa.me/5493537585428")
-    st.link_button("📸 Instagram", "https://www.instagram.com/agroline.ferreteria")
-    st.link_button("📍 Ubicación", "https://www.google.com/maps/place/Belgrano+855,+Bell+Ville,+Córdoba")
+    st.markdown("## Más de 20 años de experiencia en repuestos agrícolas")  
 
-    st.markdown("📍 Dirección :Belgrano 855    🏙️ Localidad: Bell Ville-Cordoba    ✉️ Mail: agrolineferreteria@gmail.com ")
+    st.markdown("Correas • Cuchillas • Cadenas • Rodamientos • Cardanes")
 
-with col_wp:
-    st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
-    st.image(
-        "imagenes/logos/ULTIMOBANNER.png",
-        width=260
+    st.markdown("Para cosechadoras, sembradoras e industrias")
+
+    st.markdown("""
+📍 Dirección :Belgrano 855    🏙️ Localidad: Bell Ville-Cordoba    ✉️ Mail: agrolineferreteria@gmail.com
+""")
+
+st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
+st.image(
+     "imagenes/logos/ULTIMOBANNER.png",
+     use_container_width=True
     )
 
-archivo = "catalogo.xlsx"
+archivo ="catalogo.xlsx"
 
 @st.cache_data
 def cargar_hoja(nombre_hoja):
@@ -507,4 +527,3 @@ for i, fila in df.iterrows():
     url_wp = f"https://wa.me/5493537585428?text={mensaje}"
 
     col5.markdown(f'<a href="{url_wp}" target="_blank" style="background-color:#25D366; color:white; padding:8px 15px; border-radius:8px; text-decoration:none; font-weight:bold; display:inline-block; text-align:center;">CONSULTAR STOCK</a>', unsafe_allow_html=True)
-
