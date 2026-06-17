@@ -27,15 +27,15 @@ st.markdown("""
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
-@media (max-width: 450px) {
+@media (max-width: 768px) {
     .banner-agroline {
-        height: 160px !important;
+        height: 256px !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
     }
     h1 {
-       font-size: 12px !important;
+       font-size: 32px !important;
     }
 
     p {
