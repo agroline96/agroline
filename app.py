@@ -34,6 +34,17 @@ st.markdown("""
         background-repeat: no-repeat !important;
         background-position: center !important;
     }
+    h1 {
+       font-size: 32px !important;
+    }
+
+    p {
+       font-size: 18px !important;
+    }
+
+    a {
+       font-size: 18px !important;
+    }
 }
 
 </style>
