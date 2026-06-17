@@ -58,8 +58,7 @@ st.markdown(
         border-radius:20px;
         position:relative;
         overflow:hidden;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);       
     ">
 
 </div>
