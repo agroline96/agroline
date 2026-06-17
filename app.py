@@ -182,7 +182,7 @@ with col_logo:
 
 st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
 st.image(
-     "imagenes/logos/ULTIMOBANNER.png",
+     "ULTIMOBANNER.png",
      use_container_width=True
     )
 
