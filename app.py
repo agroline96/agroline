@@ -34,7 +34,7 @@ st.markdown("""
 
 
 fondos = [
-    "imagenes/fondo1.png",
+    "fondo1.png",
     
 ]
 
