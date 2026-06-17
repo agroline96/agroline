@@ -50,13 +50,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 fondos = [ 
-     "fondo1.png"
+     "fondo2.png"
 ]
 
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
 with open(fondo_actual, "rb") as img:
     fondo_base64 = base64.b64encode(img.read()).decode()
-with open("fondo1.png", "rb") as logo:
+with open("fondo2.png", "rb") as logo:
     logo_base64 = base64.b64encode(logo.read()).decode()
 
 st.markdown(
