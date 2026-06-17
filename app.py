@@ -33,11 +33,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-fondos = [
-    "fondo1.png",
-    
-]
-
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
 with open(fondo_actual, "rb") as img:
     fondo_base64 = base64.b64encode(img.read()).decode()
