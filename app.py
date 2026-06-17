@@ -53,16 +53,7 @@ st.markdown(
         overflow:hidden;
         box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     ">
- <img src="data:image/png;base64,{logo_base64}" style="
-position:absolute;
-top:20px;
-left:20px;
-width:300px;
-z-index:9999;
-background:white;
-padding:10px;
-border-radius:10px;
-">
+
 </div>
 
 
@@ -70,10 +61,8 @@ border-radius:10px;
     unsafe_allow_html=True
 )
 
-st.image(
-    "imagenes/agroline_logo_limpio.png",
-    width=250
-)  
+
+  
 st.markdown("""
 <style>
 .stApp {
