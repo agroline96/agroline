@@ -32,7 +32,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 fondos = [ 
-     "imagenes/fondo1.png"
+     "fondo1.png"
 ]
 
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
