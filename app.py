@@ -27,7 +27,7 @@ st.markdown("""
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
-@media (max-width: 300px) {
+@media (max-width: 700px) {
     .banner-agroline {
         height: 110px !important;
         background-size: contain !important;
