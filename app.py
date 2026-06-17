@@ -27,7 +27,14 @@ st.markdown("""
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
-
+@media (max-width: 768px) {
+    .banner-agroline {
+        height: 220px !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+}
 
 </style>
 """, unsafe_allow_html=True)
@@ -43,7 +50,7 @@ with open("fondo1.png", "rb") as logo:
 
 st.markdown(
     f"""
-    <div style="
+    <div class="banner-agroline" style="
         height:300px;
         background-image:url('data:image/jpg;base64,{fondo_base64}');
         background-size:cover;
@@ -52,6 +59,7 @@ st.markdown(
         position:relative;
         overflow:hidden;
         box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        
     ">
 
 </div>
