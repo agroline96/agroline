@@ -64,7 +64,9 @@ st.markdown(
     <div class="banner-agroline" style="
         height:300px;
         background-image:url('data:image/jpg;base64,{fondo_base64}');
-        background-size:cover;
+        background-size:contain;
+        background-repeat:no-repeat;
+        background-color:#ffffff;
         background-position:center;
         border-radius:20px;
         position:relative;
