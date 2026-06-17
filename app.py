@@ -41,7 +41,7 @@ fondos = [
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
 with open(fondo_actual, "rb") as img:
     fondo_base64 = base64.b64encode(img.read()).decode()
-with open("imagenes/agroline_logo_limpio.png", "rb") as logo:
+with open("imagenes/fondo1.png", "rb") as logo:
     logo_base64 = base64.b64encode(logo.read()).decode()
 
 st.markdown(
