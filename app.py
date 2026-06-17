@@ -29,7 +29,7 @@ st.markdown("""
 }
 @media (max-width: 768px) {
     .banner-agroline {
-        height: 14px !important;
+        height: 140px !important;
         background-size: contain !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
