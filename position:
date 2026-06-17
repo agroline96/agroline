@@ -73,10 +73,7 @@ border-radius:10px;
     unsafe_allow_html=True
 )
 
-st.image(
-    "imagenes/agroline_logo_limpio.png",
-    width=250
-)  
+
 st.markdown("""
 <style>
 .stApp {
