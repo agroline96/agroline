@@ -35,7 +35,7 @@ st.markdown("""
         background-position: center !important;
     }
     h1 {
-       font-size: 32px !important;
+       font-size: 12px !important;
     }
 
     p {
