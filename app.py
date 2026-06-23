@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="🌾",
     layout="wide"
 )
-
+GA_ID = "G-34PEPJNC3B"
 components.html(
     f"""
     <!-- Google tag (gtag.js) -->
