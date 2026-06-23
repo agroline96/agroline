@@ -5,8 +5,11 @@ import pandas as pd
 import streamlit.components.v1 as components
 from urllib.parse import quote
 
-st.set_page_config(page_title="Agroline", layout="wide")
-GA_ID = "G-34PEPJNC3B"
+st.set_page_config(
+    page_title="Agroline Agrícola",
+    page_icon="🌾",
+    layout="wide"
+)
 
 components.html(
     f"""
