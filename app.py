@@ -421,7 +421,6 @@ else:
 
 df = cargar_hoja(hoja)
 
-else:
         mapa_hojas = {
     "Lista completa": "LISTA COMPLETA",
     "Rodamientos y retenes": ["RETENES", "RODAMIENTOS"],
