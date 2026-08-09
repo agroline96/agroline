@@ -415,13 +415,15 @@ if hojas_marca:
             
     ]
 if hoja_url:
-    hoja = hoja_url
+        hoja = hoja_url
+    else:
+        hoja = st.selectbox("Seleccioná modelo", hojas_marca)
+
+    df = cargar_hoja(hoja)
+
 else:
-    hoja = st.selectbox("Seleccioná modelo", hojas_marca)
-
-df = cargar_hoja(hoja)
-
-        mapa_hojas = {
+   
+     mapa_hojas = {
     "Lista completa": "LISTA COMPLETA",
     "Rodamientos y retenes": ["RETENES", "RODAMIENTOS"],
     "Correas A-B-C y Kevlar": [
