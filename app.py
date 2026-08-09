@@ -414,7 +414,7 @@ if hojas_marca:
             "NEW HOLLAND TX 68",
             
     ]
-        if hoja_url:
+if hoja_url:
     hoja = hoja_url
 else:
     hoja = st.selectbox("Seleccioná modelo", hojas_marca)
