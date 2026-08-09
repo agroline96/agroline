@@ -4,6 +4,7 @@ import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components
 from urllib.parse import quote
+import re
 
 st.set_page_config(
     page_title="Agroline Agrícola",
@@ -216,6 +217,12 @@ def cargar_hoja(nombre_hoja):
     return pd.read_excel(archivo, sheet_name=nombre_hoja)
 
 excel = pd.ExcelFile(archivo)
+
+# --- URLs amigables para productos y modelos ---
+def crear_slug(texto):
+    texto = str(texto).lower().strip()
+    texto = re.sub(r'[^a-z0-9]+', '-', texto)
+    return texto.strip('-')
 st.markdown("""
 <style>
 div[data-testid="stVerticalBlock"]:has(h3) {
@@ -244,14 +251,30 @@ categorias = [
     "Calzado de trabajo",
     "LISTA COMPLETA",
 ]
-categoria = st.selectbox(
-    "Seleccioná una categoría",
-    ["Seleccioná una categoría"] + categorias
-)
 
-if categoria == "Seleccioná una categoría":
-    st.stop()
+# Leer modelo desde la URL
+modelo_url = st.query_params.get("modelo", "")
 
+hoja_url = None
+
+if modelo_url:
+    for nombre_hoja in excel.sheet_names:
+        if crear_slug(nombre_hoja) == crear_slug(modelo_url):
+            hoja_url = nombre_hoja
+            break
+if hoja_url:
+    categoria = "Correas para cosechadoras"
+else:
+    categoria = st.selectbox(
+        "Seleccioná una categoría",
+        ["Seleccioná una categoría"] + categorias
+    )
+
+    if categoria == "Seleccioná una categoría":
+        st.stop()
+        
+if hoja_url:
+    hojas_marca = [hoja_url]
 
 
 if categoria.lower() == "secciones-puntones-barras armadas-accesorios":
@@ -261,7 +284,7 @@ if categoria.lower() == "secciones-puntones-barras armadas-accesorios":
         "SECCIONES DE CORTE",
         "PUNTONES"
     ]
-if categoria.lower() == "correas cosechadoras":
+if categoria.lower() == "correas cosechadoras" and not hoja_url:
 
     marca = st.selectbox(
         "Seleccioná marca",
@@ -391,8 +414,12 @@ if hojas_marca:
             "NEW HOLLAND TX 68",
             
     ]
-        hoja = st.selectbox("Seleccioná modelo", hojas_marca)
-        df = cargar_hoja(hoja)
+        if hoja_url:
+    hoja = hoja_url
+else:
+    hoja = st.selectbox("Seleccioná modelo", hojas_marca)
+
+df = cargar_hoja(hoja)
 
     else:
         mapa_hojas = {
