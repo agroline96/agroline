@@ -422,8 +422,7 @@ if hoja_url:
     df = cargar_hoja(hoja)
 
 else:
-   
-     mapa_hojas = {
+    mapa_hojas = {
     "Lista completa": "LISTA COMPLETA",
     "Rodamientos y retenes": ["RETENES", "RODAMIENTOS"],
     "Correas A-B-C y Kevlar": [
