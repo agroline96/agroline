@@ -4,14 +4,10 @@ import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components
 from urllib.parse import quote
-import re
 
-st.set_page_config(
-    page_title="Agroline Agrícola",
-    page_icon="🌾",
-    layout="wide"
-)
+st.set_page_config(page_title="Agroline", layout="wide")
 GA_ID = "G-34PEPJNC3B"
+
 components.html(
     f"""
     <!-- Google tag (gtag.js) -->
@@ -31,62 +27,46 @@ st.markdown("""
     padding-top: 0rem;
     padding-bottom: 0rem;
 }
-@media (max-width: 768px) {
-    .banner-agroline {
-        height: 120px !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-    }
-    h1 {
-       font-size: 32px !important;
-    }
 
-    p {
-       font-size: 18px !important;
-    }
-
-    a {
-       font-size: 18px !important;
-    }
-}
 
 </style>
 """, unsafe_allow_html=True)
-fondos = [ 
-     "fondo6.png"
+
+
+fondos = [
+    "imagenes/fondo1.png",
+    
 ]
 
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
 with open(fondo_actual, "rb") as img:
     fondo_base64 = base64.b64encode(img.read()).decode()
-with open("fondo6.png", "rb") as logo:
+with open("imagenes/agroline_logo_limpio.png", "rb") as logo:
     logo_base64 = base64.b64encode(logo.read()).decode()
 
 st.markdown(
     f"""
-    <div class="banner-agroline" style="
+    <div style="
         height:300px;
         background-image:url('data:image/jpg;base64,{fondo_base64}');
         background-size:cover;
-        background-repeat:no-repeat;
-        background-color:#ffffff;
         background-position:center;
-        border-radius:20px;
+        border-radius:10px;
         position:relative;
         overflow:hidden;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);       
     ">
-
-</div>
-
-
+        <img src="data:image/png;base64,{logo_base64}" style="
+            position:absolute;
+            left:-20px;
+            bottom:-60px;
+            width:250px;
+        ">
+    </div>
     """,
     unsafe_allow_html=True
 )
 
 
-  
 st.markdown("""
 <style>
 .stApp {
@@ -162,67 +142,51 @@ button[kind="header"] {
 col_logo, col_wp = st.columns([3, 1])
 
 with col_logo:
-    st.markdown("<div style='margin-top:5px'></div>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    col_btn1, col_btn2, col_btn3 = st.columns(3)
-
-    with col_btn1:
-        st.link_button(
-            "🟢 WhatsApp",
-            "https://wa.me/5493537585428",
-            use_container_width=True
-        )
-
-    with col_btn2:
-        st.link_button(
-            "📷 Instagram",
-            "https://www.instagram.com/agroline.ferreteria",
-            use_container_width=True
-        )
-
-    with col_btn3:
-        st.link_button(
-            "📍 Ubicación",
-            "https://www.google.com/maps/place/Belgrano+855,+Bell+Ville,+Córdoba",
-            use_container_width=True
-        )
+    st.markdown("<div style='margin-top:20px'></div>", unsafe_allow_html=True)
 
     st.markdown("""
-    <div style='color:#e67e22;font-size:28px;font-weight:bold;'>
-    🌿 REPRESENTANTE OFICIAL STIHL
-    </div>
+    <h3 style='color:#2D5D36;'>
+    Más de 20 años de experiencia en repuestos agrícolas
+    </h3>
+
+    <p style='font-size:16px; color:#666; margin-bottom:0px;'>
+    Correas • Cuchillas • Cadenas • Rodamientos • Cardanes
+    </p>
+
+    <p style='font-size:16px; color:#666;'>
+    Para cosechadoras, sembradoras e industrias
+    </p>
     """, unsafe_allow_html=True)
 
-    st.markdown("## Más de 20 años de experiencia en repuestos agrícolas")  
-
-    st.markdown("Correas • Cuchillas • Cadenas • Rodamientos • Cardanes")
-
-    st.markdown("Para cosechadoras, sembradoras e industrias")
-
     st.markdown("""
-📍 Dirección :Belgrano 855    🏙️ Localidad: Bell Ville-Cordoba    ✉️ Mail: agrolineferreteria@gmail.com
-""")
+    <p style='font-size:18px;
+              color:#F58220;
+              font-weight:bold;
+              margin-top:15px;'>
+    🌿 REPRESENTANTE OFICIAL STIHL
+    </p>
+    """, unsafe_allow_html=True)
 
-st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
-st.image(
-     "ULTIMOBANNER.png",
-     use_container_width=True
+    st.link_button("🟢 WhatsApp", "https://wa.me/5493537585428")
+    st.link_button("📸 Instagram", "https://www.instagram.com/agroline.ferreteria")
+    st.link_button("📍 Ubicación", "https://www.google.com/maps/place/Belgrano+855,+Bell+Ville,+Córdoba")
+
+    st.markdown("📍 Dirección :Belgrano 855    🏙️ Localidad: Bell Ville-Cordoba    ✉️ Mail: agrolineferreteria@gmail.com ")
+
+with col_wp:
+    st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
+    st.image(
+        "imagenes/logos/ULTIMOBANNER.png",
+        width=260
     )
 
-archivo ="catalogo.xlsx"
+archivo = "catalogo.xlsx"
 
 @st.cache_data
 def cargar_hoja(nombre_hoja):
     return pd.read_excel(archivo, sheet_name=nombre_hoja)
 
 excel = pd.ExcelFile(archivo)
-
-# --- URLs amigables para productos y modelos ---
-def crear_slug(texto):
-    texto = str(texto).lower().strip()
-    texto = re.sub(r'[^a-z0-9]+', '-', texto)
-    return texto.strip('-')
 st.markdown("""
 <style>
 div[data-testid="stVerticalBlock"]:has(h3) {
@@ -251,30 +215,14 @@ categorias = [
     "Calzado de trabajo",
     "LISTA COMPLETA",
 ]
+categoria = st.selectbox(
+    "Seleccioná una categoría",
+    ["Seleccioná una categoría"] + categorias
+)
 
-# Leer modelo desde la URL
-modelo_url = st.query_params.get("modelo", "")
+if categoria == "Seleccioná una categoría":
+    st.stop()
 
-hoja_url = None
-
-if modelo_url:
-    for nombre_hoja in excel.sheet_names:
-        if crear_slug(nombre_hoja) == crear_slug(modelo_url):
-            hoja_url = nombre_hoja
-            break
-if hoja_url:
-    categoria = "Correas para cosechadoras"
-else:
-    categoria = st.selectbox(
-        "Seleccioná una categoría",
-        ["Seleccioná una categoría"] + categorias
-    )
-
-    if categoria == "Seleccioná una categoría":
-        st.stop()
-        
-if hoja_url:
-    hojas_marca = [hoja_url]
 
 
 if categoria.lower() == "secciones-puntones-barras armadas-accesorios":
@@ -284,7 +232,7 @@ if categoria.lower() == "secciones-puntones-barras armadas-accesorios":
         "SECCIONES DE CORTE",
         "PUNTONES"
     ]
-if categoria.lower() == "correas cosechadoras" and not hoja_url:
+if categoria.lower() == "correas cosechadoras":
 
     marca = st.selectbox(
         "Seleccioná marca",
@@ -414,14 +362,11 @@ if hojas_marca:
             "NEW HOLLAND TX 68",
             
     ]
-if hoja_url:
-        hoja = hoja_url
-    else:
         hoja = st.selectbox("Seleccioná modelo", hojas_marca)
+        df = cargar_hoja(hoja)
 
-    df = cargar_hoja(hoja)
-else:
-    mapa_hojas = {
+    else:
+        mapa_hojas = {
     "Lista completa": "LISTA COMPLETA",
     "Rodamientos y retenes": ["RETENES", "RODAMIENTOS"],
     "Correas A-B-C y Kevlar": [
