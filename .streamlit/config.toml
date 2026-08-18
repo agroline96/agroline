@@ -1,0 +1,18 @@
+[client]
+# No mostrar tracebacks de Python a los visitantes.
+# Los errores completos se siguen viendo en los logs de Render.
+showErrorDetails = "none"
+toolbarMode = "minimal"
+
+[theme]
+# Fijar el tema claro. Sin esto Streamlit sigue el modo del navegador:
+# los visitantes con modo oscuro recibian texto blanco sobre el fondo
+# claro de la app, y la linea de direccion/mail quedaba ilegible.
+base = "light"
+primaryColor = "#2D5D36"
+backgroundColor = "#F5F8F4"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#222222"
+
+[browser]
+gatherUsageStats = false
