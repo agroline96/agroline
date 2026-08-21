@@ -1,9 +1,15 @@
 import base64
 import time
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components
 from urllib.parse import quote
+
+# Todas las rutas se resuelven contra la carpeta de este archivo, no contra el
+# directorio de trabajo del proceso. Sin esto, la app funciona en local pero
+# falla en el servidor si arranca desde otra carpeta.
+BASE_DIR = Path(__file__).resolve().parent
 
 st.set_page_config(page_title="Agroline", layout="wide")
 GA_ID = "G-34PEPJNC3B"
@@ -39,9 +45,9 @@ fondos = [
 ]
 
 fondo_actual = fondos[int(time.time() / 10) % len(fondos)]
-with open(fondo_actual, "rb") as img:
+with open(BASE_DIR / fondo_actual, "rb") as img:
     fondo_base64 = base64.b64encode(img.read()).decode()
-with open("agroline_logo_limpio.png", "rb") as logo:
+with open(BASE_DIR / "agroline_logo_limpio.png", "rb") as logo:
     logo_base64 = base64.b64encode(logo.read()).decode()
 
 st.markdown(
@@ -175,12 +181,13 @@ with col_logo:
 
 with col_wp:
     st.markdown("<div style='margin-top:25px;'></div>", unsafe_allow_html=True)
-    st.image(
-        "imagenes/logos/ULTIMOBANNER.png",
-        width=260
-    )
+    # El archivo esta en la raiz del repo, no en imagenes/logos/.
+    # El guardado con exists() evita que una imagen faltante corte la pagina entera.
+    banner_stihl = BASE_DIR / "ULTIMOBANNER.png"
+    if banner_stihl.exists():
+        st.image(str(banner_stihl), width=260)
 
-archivo = "catalogo.xlsx"
+archivo = BASE_DIR / "catalogo.xlsx"
 
 @st.cache_data
 def cargar_hoja(nombre_hoja):
@@ -484,15 +491,15 @@ for i, fila in df.iterrows():
     foto = str(fila.get("FOTO", "")).strip()
 
     if foto and foto.lower() != "nan":
-        ruta_imagen = f"imagenes/{foto}"
+        ruta_imagen = BASE_DIR / "imagenes" / foto
         
         try:
-            col0.image(ruta_imagen, width=120)
+            col0.image(str(ruta_imagen), width=120)
 
             if col0.button("Ver foto", key=f"foto_{i}"):
-                st.image(ruta_imagen, width=600)
+                st.image(str(ruta_imagen), width=600)
 
-        except:
+        except Exception:
            col0.write("")
     else:
         col0.write("")
